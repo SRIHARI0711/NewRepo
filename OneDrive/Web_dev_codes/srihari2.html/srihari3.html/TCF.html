@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Feedback Form</title>
+    <style>
+        body{
+            font-family:'Times New Roman', Times, serif;
+            margin: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        
+        td{
+            padding: 5px;
+        }
+        
+        select{
+            width: 320px;
+        }
+        .submit-btn{
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teacher Feedback Form</h1>
+
+    <form>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>Subject:</td>
+                <td><input type="text" name="subject"></td>
+            </tr>
+            <tr>
+                <td>Message:</td>
+                <td><textarea name="message" rows="5" cols="50"></textarea></td>
+            </tr>
+            <tr>
+                <td>Rating:</td>
+                <td>
+                    <select name="rating">
+                        <option>--Select--</option>
+                        <option value="5">Excellent</option>
+                        <option value="4">Very Good</option>
+                        <option value="3">Good</option>
+                        <option value="2">Fair</option>
+                        <option value="1">Poor</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Recommend:</td>
+                <td><input type="checkbox" name="recommend" value="yes">Yes</td>
+            </tr>
+        </table>
+        <div class="submit-btn">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

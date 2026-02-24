@@ -1,0 +1,23 @@
+body{
+    font-family: 'Bungee Spice', sans-serif;
+    text-align: center;
+}
+p{
+    width:30%;
+    transition: width 1.5s;
+}
+p:hover{
+    width:100%;
+}
+button{
+    width:8%;
+    transition: width 0.5s;
+}
+button:hover{
+    width:10%;
+}
+button{
+    font-family: 'Bungee Spice', sans-serif;
+    border-color: coral;
+
+}

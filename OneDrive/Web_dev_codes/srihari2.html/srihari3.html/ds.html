@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      border-spacing: 2px;
+      margin: 20px;
+      border-collapse: separate;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th{
+      background-color:#ddd;
+    }
+
+    tr:nth-child(even) {
+      background-color:white;
+    }
+
+    /* Example of row-span and column-span usage */
+    td.row-span {
+      background-color: #a2d5f2;
+      vertical-align: middle;
+    }
+
+    td.column-span {
+      background-color: #d5f2a2;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>John Doe</td>
+        <td>20</td>
+        <td>Grade A</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="row-span">2</td>
+        <td>Emily Smith</td>
+        <td>22</td>
+        <td rowspan="2" class="column-span">Grade B</td>
+      </tr>
+      <tr>
+        <td>Mary Johnson</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Tom Brown</td>
+        <td>19</td>
+        <td>Grade C</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
