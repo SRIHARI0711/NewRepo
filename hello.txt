@@ -1,2 +1,4 @@
 Hello World
 This is DevOps lab
+Git is powerful
+Learning git commands
