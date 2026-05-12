@@ -1,172 +1,106 @@
 // BadCode.java
-// Intentionally poor-quality Java code for SonarQube testing only.
+// Intentionally bad Java code for SonarQube analysis
 
-import java.util.*;
-import java.io.*;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BadCode {
 
-    public static int GLOBAL = 0;
+    public static String PASSWORD = "admin123"; // Hardcoded credential
+
+    static int global = 0;
 
     public static void main(String[] args) {
 
-        System.out.println("Starting bad code...");
+        System.out.println("Program Started");
 
-        int x = 10;
-        int y = 20;
-        int z = 0;
+        String name = null;
+
+        // Possible NullPointerException
+        if (name.equals("admin")) {
+            System.out.println("Hello");
+        }
 
         // Dead code
         if (false) {
-            System.out.println("This will never execute");
-        }
-
-        // Duplicate logic + poor naming
-        if (x > 0) {
-            z += x;
-        } else {
-            z -= x;
-        }
-
-        if (y > 0) {
-            z += y;
-        } else {
-            z -= y;
+            System.out.println("Never executes");
         }
 
         // Empty catch block
         try {
-            int a = 10 / 0;
+            int x = 10 / 0;
         } catch (Exception e) {
 
         }
-
-        // Nested complexity
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                for (int k = 0; k < 5; k++) {
-
-                    if (i % 2 == 0) {
-                        if (j % 2 == 0) {
-                            if (k % 2 == 0) {
-                                System.out.println(i + " " + j + " " + k);
-                            } else {
-                                System.out.println("odd");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // Unused variables
-        int unused1 = 100;
-        String unused2 = "Hello";
-
-        // Bad string concatenation in loop
-        String s = "";
-        for (int i = 0; i < 100; i++) {
-            s = s + i;
-        }
-
-        // Null pointer risk
-        String name = null;
-
-        if (name.equals("test")) {
-            System.out.println("Test");
-        }
-
-        // Hardcoded password
-        String password = "admin123";
 
         // Resource leak
         try {
             FileInputStream fis = new FileInputStream("test.txt");
-            int data = fis.read();
-            System.out.println(data);
+            System.out.println(fis.read());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        // Long method style
-        badMethod(1,2,3,4,5,6,7,8,9,10);
+        // Duplicate logic
+        int a = process(10);
+        int b = process(20);
 
-        System.out.println("Finished");
+        // Infinite loop risk
+        int i = 0;
+        while (i < 10) {
+            System.out.println(i);
+        }
+
+        // Unused variables
+        int unused = 100;
+        String temp = "unused";
+
+        // Inefficient string concatenation
+        String s = "";
+        for (int j = 0; j < 100; j++) {
+            s = s + j;
+        }
+
+        // Raw type usage
+        List list = new ArrayList();
+        list.add("hello");
+
+        // Nested complexity
+        for (int x = 0; x < 5; x++) {
+            for (int y = 0; y < 5; y++) {
+                for (int z = 0; z < 5; z++) {
+
+                    if (x > 1) {
+                        if (y > 1) {
+                            if (z > 1) {
+                                System.out.println(x + y + z);
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        System.out.println("Done");
     }
 
-    public static int badMethod(
-            int a,
-            int b,
-            int c,
-            int d,
-            int e,
-            int f,
-            int g,
-            int h,
-            int i,
-            int j
-    ) {
+    public static int process(int value) {
 
         int result = 0;
 
-        if (a > 0) {
-            result += a;
+        // Duplicate conditions
+        if (value > 0) {
+            result += value;
         } else {
-            result -= a;
+            result -= value;
         }
 
-        if (b > 0) {
-            result += b;
+        if (value > 0) {
+            result += value;
         } else {
-            result -= b;
-        }
-
-        if (c > 0) {
-            result += c;
-        } else {
-            result -= c;
-        }
-
-        if (d > 0) {
-            result += d;
-        } else {
-            result -= d;
-        }
-
-        if (e > 0) {
-            result += e;
-        } else {
-            result -= e;
-        }
-
-        if (f > 0) {
-            result += f;
-        } else {
-            result -= f;
-        }
-
-        if (g > 0) {
-            result += g;
-        } else {
-            result -= g;
-        }
-
-        if (h > 0) {
-            result += h;
-        } else {
-            result -= h;
-        }
-
-        if (i > 0) {
-            result += i;
-        } else {
-            result -= i;
-        }
-
-        if (j > 0) {
-            result += j;
-        } else {
-            result -= j;
+            result -= value;
         }
 
         return result;
